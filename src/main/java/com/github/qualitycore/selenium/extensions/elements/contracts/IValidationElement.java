@@ -28,7 +28,7 @@ public interface IValidationElement extends WrapsElement {
 
 	public void attributeEquals(String attributeName, String expectedAttributeValue);
 
-	public void attributeNotEquals(String attributeName, String notexpectedAttributeValue);
+	public void attributeNotEquals(String attributeName, String notExpectedAttributeValue);
 
 	public void cssValueEquals(String propertyName, String expectedCssValue);
 
