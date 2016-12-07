@@ -27,7 +27,7 @@ public abstract class AbstractWrapsElement implements WrapsElement {
 	}
 
 	protected AbstractWrapsElement() {
-
+		super();
 	}
 
 	@Override
