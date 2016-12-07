@@ -8,15 +8,15 @@ import org.openqa.selenium.internal.WrapsElement;
 
 public interface IVerificationElement extends WrapsElement {
 
-	public boolean isPresent(boolean isPresent);
+	public boolean isPresent();
 
-	public boolean isDisplayed(boolean isDisplayed);
+	public boolean isDisplayed();
 
-	public boolean isEnabled(boolean isEnabled);
+	public boolean isEnabled();
 
-	public boolean isClicable(boolean isClicable);
+	public boolean isClicable();
 
-	public boolean isSelected(boolean isSelected);
+	public boolean isSelected();
 
 	public boolean textEquals(String expectedText);
 
