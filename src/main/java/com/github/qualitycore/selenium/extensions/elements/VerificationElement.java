@@ -92,5 +92,10 @@ public class VerificationElement extends AbstractWrapsElement implements IVerifi
 	public boolean rectEquals(Rectangle expectedRect) {
 		return this.getWrappedElement().getRect().equals(expectedRect);
 	}
+	
+	@Override
+	public String toString() {
+		return "Verification Element -> " + this.getWrappedElement();
+	}
 
 }

@@ -39,4 +39,9 @@ public abstract class AbstractWrapsElement implements WrapsElement {
 		this.wrappedElement = wrappedElement;
 	}
 
+	@Override
+	public String toString() {
+		return "Wrapped Element -> " + this.getWrappedElement();
+	}
+
 }
