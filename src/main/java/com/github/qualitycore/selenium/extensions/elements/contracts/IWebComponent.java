@@ -22,7 +22,7 @@ public interface IWebComponent extends WebElement, IWrapsValidationElement, IWra
 	public void contextClick();
 
 	public void dragAndDrop(WebElement target);
-
-	public void dragAndDropBy();
+	
+	public void dragAndDropBy(int xOffset, int yOffset);
 
 }
