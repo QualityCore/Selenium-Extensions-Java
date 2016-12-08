@@ -3,6 +3,7 @@ package com.github.qualitycore.selenium.extensions.elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.internal.WrapsDriver;
 import org.openqa.selenium.internal.WrapsElement;
 
 public abstract class AbstractWrapsElement implements WrapsElement {
@@ -37,6 +38,10 @@ public abstract class AbstractWrapsElement implements WrapsElement {
 
 	protected void setWrappedElement(WebElement wrappedElement) {
 		this.wrappedElement = wrappedElement;
+	}
+
+	protected WebDriver getWrappedDriver() {
+		return ((WrapsDriver) this.getWrappedElement()).getWrappedDriver();
 	}
 
 	@Override
