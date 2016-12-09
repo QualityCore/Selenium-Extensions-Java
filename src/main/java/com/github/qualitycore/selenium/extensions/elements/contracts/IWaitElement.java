@@ -5,7 +5,10 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 
 public interface IWaitElement extends IWrapsElement {
-	
+
+	public static long	DEFAULT_TIMEOUT_IN_MILLISECONDS	= 30000;
+	public static long	DEFAULT_WAIT_IN_MILLISECONDS	= 250;
+
 	public void isPresent();
 
 	public void isNotPresent();
@@ -57,7 +60,7 @@ public interface IWaitElement extends IWrapsElement {
 	public long getTimeoutInMilliseconds();
 
 	public void setTimeoutInMilliseconds(long timeoutInMilliseconds);
-	
+
 	public long getWaitInMilliseconds();
 
 	public void setWaitInMilliseconds(long waitInMilliseconds);

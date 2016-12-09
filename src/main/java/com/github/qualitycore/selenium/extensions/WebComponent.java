@@ -106,12 +106,12 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 
 	@Override
 	public IWaitElement waitUntil(long timeoutInMilliseconds) {
-		return this.waitUntil(timeoutInMilliseconds);
+		return this.waitUntil(timeoutInMilliseconds, IWaitElement.DEFAULT_WAIT_IN_MILLISECONDS);
 	}
 
 	@Override
 	public IWaitElement waitUntil() {
-		return this.waitUntil(30000, 250);
+		return this.waitUntil(IWaitElement.DEFAULT_TIMEOUT_IN_MILLISECONDS, IWaitElement.DEFAULT_WAIT_IN_MILLISECONDS);
 	}
 
 	@Override

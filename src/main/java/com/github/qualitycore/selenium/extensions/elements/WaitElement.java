@@ -30,7 +30,11 @@ public class WaitElement extends AbstractWrapsElement implements IWaitElement {
 	}
 
 	public WaitElement(WebElement wrappedElement, long timeoutInMilliseconds) {
-		this(wrappedElement, timeoutInMilliseconds, 250);
+		this(wrappedElement, timeoutInMilliseconds, DEFAULT_WAIT_IN_MILLISECONDS);
+	}
+
+	public WaitElement(WebElement wrappedElement) {
+		this(wrappedElement, DEFAULT_TIMEOUT_IN_MILLISECONDS, DEFAULT_WAIT_IN_MILLISECONDS);
 	}
 
 	public WaitElement(WebDriver webDriver, By locator, long timeoutInMilliseconds, long waitInMilliseconds) {
@@ -41,14 +45,18 @@ public class WaitElement extends AbstractWrapsElement implements IWaitElement {
 	}
 
 	public WaitElement(WebDriver webDriver, By locator, long timeoutInMilliseconds) {
-		this(webDriver, locator, timeoutInMilliseconds, 250);
+		this(webDriver, locator, timeoutInMilliseconds, DEFAULT_WAIT_IN_MILLISECONDS);
+	}
+
+	public WaitElement(WebDriver webDriver, By locator) {
+		this(webDriver, locator, DEFAULT_TIMEOUT_IN_MILLISECONDS, DEFAULT_WAIT_IN_MILLISECONDS);
 	}
 
 	protected WaitElement() {
 		super();
 
-		this.timeoutInMilliseconds = 30000;
-		this.waitInMilliseconds = 250;
+		this.timeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
+		this.waitInMilliseconds = DEFAULT_WAIT_IN_MILLISECONDS;
 	}
 
 	@Override
