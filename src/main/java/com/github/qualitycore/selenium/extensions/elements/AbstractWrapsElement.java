@@ -3,10 +3,13 @@ package com.github.qualitycore.selenium.extensions.elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.internal.WrapsDriver;
-import org.openqa.selenium.internal.WrapsElement;
 
-public abstract class AbstractWrapsElement implements WrapsElement {
+import com.github.qualitycore.selenium.extensions.elements.contracts.IWrapsElement;
+
+public class AbstractWrapsElement implements IWrapsElement {
 
 	private WebElement wrappedElement;
 
@@ -42,6 +45,11 @@ public abstract class AbstractWrapsElement implements WrapsElement {
 
 	protected WebDriver getWrappedDriver() {
 		return ((WrapsDriver) this.getWrappedElement()).getWrappedDriver();
+	}
+
+	@Override
+	public Coordinates getCoordinates() {
+		return ((Locatable) this.getWrappedElement()).getCoordinates();
 	}
 
 	@Override

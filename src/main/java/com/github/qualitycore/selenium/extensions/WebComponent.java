@@ -1,5 +1,8 @@
 package com.github.qualitycore.selenium.extensions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -96,6 +99,22 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 
 	protected Actions getActions() {
 		return new Actions(this.getWrappedDriver());
+	}
+
+	@Override
+	public List<IWebComponent> findElementsAsComponent(By by) {
+		List<WebElement> webElements = this.findElements(by);
+		List<IWebComponent> webComponents = new ArrayList<>(webElements.size());
+
+		for (WebElement webElement : webElements)
+			webComponents.add(new WebComponent(webElement));
+
+		return webComponents;
+	}
+
+	@Override
+	public IWebComponent findElementAsComponent(By by) {
+		return new WebComponent(this.findElement(by));
 	}
 
 }

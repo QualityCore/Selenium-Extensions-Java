@@ -4,9 +4,8 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.WrapsElement;
 
-public interface IVerificationElement extends WrapsElement {
+public interface IVerificationElement extends IWrapsElement {
 
 	public boolean isPresent();
 
@@ -33,5 +32,5 @@ public interface IVerificationElement extends WrapsElement {
 	public boolean rectEquals(Rectangle expectedRect);
 
 	public WebElement getWrappedElement();
-	
+
 }

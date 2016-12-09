@@ -1,9 +1,11 @@
 package com.github.qualitycore.selenium.extensions.elements.contracts;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.WrapsElement;
+import java.util.List;
 
-public interface IWebComponent extends WebElement, IWrapsValidationElement, IWrapsVerificationElement, WrapsElement {
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public interface IWebComponent extends WebElement, IWrapsValidationElement, IWrapsVerificationElement, IWrapsElement {
 
 	public boolean isPresent();
 
@@ -22,7 +24,11 @@ public interface IWebComponent extends WebElement, IWrapsValidationElement, IWra
 	public void contextClick();
 
 	public void dragAndDrop(WebElement target);
-	
+
 	public void dragAndDropBy(int xOffset, int yOffset);
+
+	public List<? extends IWebComponent> findElementsAsComponent(By by);
+
+	public IWebComponent findElementAsComponent(By by);
 
 }
