@@ -97,10 +97,6 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 		return new VerificationElement(this.getWrappedElement());
 	}
 
-	protected Actions getActions() {
-		return new Actions(this.getWrappedDriver());
-	}
-
 	@Override
 	public List<IWebComponent> findElementsAsComponent(By by) {
 		List<WebElement> webElements = this.findElements(by);
@@ -115,6 +111,10 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 	@Override
 	public IWebComponent findElementAsComponent(By by) {
 		return new WebComponent(this.findElement(by));
+	}
+	
+	protected Actions getActions() {
+		return new Actions(this.getWrappedDriver());
 	}
 
 }
