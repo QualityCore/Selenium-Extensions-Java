@@ -3,7 +3,6 @@ package com.github.qualitycore.selenium.extensions.elements.contracts;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
-import org.openqa.selenium.WebElement;
 
 public interface IVerificationElement extends IWrapsElement {
 
@@ -30,7 +29,5 @@ public interface IVerificationElement extends IWrapsElement {
 	public boolean sizeEquals(Dimension expectedSize);
 
 	public boolean rectEquals(Rectangle expectedRect);
-
-	public WebElement getWrappedElement();
 
 }

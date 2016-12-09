@@ -4,17 +4,27 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 
-public interface IValidationElement extends IWrapsElement {
+public interface IWaitElement extends IWrapsElement {
 
-	public void isPresent(boolean isPresent);
+	public void isPresent();
 
-	public void isDisplayed(boolean isDisplayed);
+	public void isNotPresent();
 
-	public void isEnabled(boolean isEnabled);
+	public void isDisplayed();
 
-	public void isClicable(boolean isClicable);
+	public void isNotDisplayed();
 
-	public void isSelected(boolean isSelected);
+	public void isEnabled();
+
+	public void isNotEnabled();
+
+	public void isClicable();
+
+	public void isNotClicable();
+
+	public void isSelected();
+
+	public void isNotSelected();
 
 	public void textEquals(String expectedText);
 
