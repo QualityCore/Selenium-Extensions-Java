@@ -13,8 +13,10 @@ import org.openqa.selenium.interactions.Actions;
 import com.github.qualitycore.selenium.extensions.elements.AbstractWebElementDecorator;
 import com.github.qualitycore.selenium.extensions.elements.ValidationElement;
 import com.github.qualitycore.selenium.extensions.elements.VerificationElement;
+import com.github.qualitycore.selenium.extensions.elements.WaitElement;
 import com.github.qualitycore.selenium.extensions.elements.contracts.IValidationElement;
 import com.github.qualitycore.selenium.extensions.elements.contracts.IVerificationElement;
+import com.github.qualitycore.selenium.extensions.elements.contracts.IWaitElement;
 import com.github.qualitycore.selenium.extensions.elements.contracts.IWebComponent;
 
 public class WebComponent extends AbstractWebElementDecorator implements IWebComponent {
@@ -98,6 +100,21 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 	}
 
 	@Override
+	public IWaitElement waitUntil(long timeoutInMilliseconds, long waitInMilliseconds) {
+		return new WaitElement(this.getWrappedElement(), timeoutInMilliseconds, waitInMilliseconds);
+	}
+
+	@Override
+	public IWaitElement waitUntil(long timeoutInMilliseconds) {
+		return this.waitUntil(timeoutInMilliseconds);
+	}
+
+	@Override
+	public IWaitElement waitUntil() {
+		return this.waitUntil(30000, 250);
+	}
+
+	@Override
 	public List<IWebComponent> findElementsAsComponent(By by) {
 		List<WebElement> webElements = this.findElements(by);
 		List<IWebComponent> webComponents = new ArrayList<>(webElements.size());
@@ -112,7 +129,7 @@ public class WebComponent extends AbstractWebElementDecorator implements IWebCom
 	public IWebComponent findElementAsComponent(By by) {
 		return new WebComponent(this.findElement(by));
 	}
-	
+
 	protected Actions getActions() {
 		return new Actions(this.getWrappedDriver());
 	}

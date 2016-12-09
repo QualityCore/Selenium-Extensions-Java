@@ -5,7 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public interface IWebComponent extends WebElement, IWrapsValidationElement, IWrapsVerificationElement, IWrapsElement {
+public interface IWebComponent extends WebElement, IWrapsValidationElement, IWrapsVerificationElement, IWrapsWaitElement, IWrapsElement {
 
 	public boolean isPresent();
 

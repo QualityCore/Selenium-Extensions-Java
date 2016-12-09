@@ -5,7 +5,7 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.Rectangle;
 
 public interface IWaitElement extends IWrapsElement {
-
+	
 	public void isPresent();
 
 	public void isNotPresent();
@@ -53,5 +53,13 @@ public interface IWaitElement extends IWrapsElement {
 	public void rectEquals(Rectangle expectedRect);
 
 	public void rectNotEquals(Rectangle notExpectedRect);
+
+	public long getTimeoutInMilliseconds();
+
+	public void setTimeoutInMilliseconds(long timeoutInMilliseconds);
+	
+	public long getWaitInMilliseconds();
+
+	public void setWaitInMilliseconds(long waitInMilliseconds);
 
 }
