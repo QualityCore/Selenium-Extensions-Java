@@ -6,8 +6,8 @@ import org.openqa.selenium.Rectangle;
 
 public interface IWaitElement extends IWrapsElement {
 
-	public static long	DEFAULT_TIMEOUT_IN_MILLISECONDS	= 30000;
-	public static long	DEFAULT_WAIT_IN_MILLISECONDS	= 250;
+	public static long	DEFAULT_TIMEOUT_IN_MILLISECONDS	= 30000L;
+	public static long	DEFAULT_WAIT_IN_MILLISECONDS	= 250L;
 
 	public void isPresent();
 
